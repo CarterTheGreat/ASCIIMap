@@ -5,6 +5,8 @@ import java.awt.event.ActionListener;
 import java.util.Arrays;
 import java.util.Scanner;
 
+import javax.swing.Action;
+
 public class Map {
 	  static char dir;
 	  static String eventText;
@@ -73,11 +75,65 @@ public class Map {
 	      static int life = 3;
 
 	      
+	 public static void s() {
+		 if(x<38) {
+   		  x++;
+   		  playerPos = map[x][y];
+         	  map[x][y] = 0;
+	          map[x-1][y]=8;
+	          }
+   	  else {
+   		  System.out.println("Can't go there");
+   		  waterCount++;
+   	  }
+	 }
 	 
-	  public static void move(char dir){
-		  
-		  
-		
+	 public static Action w() {
+		 System.out.println("ran w()");
+		 
+		 if(x>1) {
+       	  x--;
+       	  playerPos = map[x][y];
+       	  map[x][y] = 0; 
+	          map[x+1][y]=8;
+	          }
+         else {
+   		  System.out.println("Can't go there");
+   		  waterCount++;
+   	  }
+		return null;
+	 }
+	 
+	 
+	 public static void a() {
+		 if(y>1) {
+   		  y--;
+   		  playerPos = map[x][y];
+   		  map[x][y] = 0; 
+   		  map[x][y+1]=8;
+   	  }
+   	  else {
+   		  System.out.println("Can't go there");
+   		  waterCount++;
+   	  }
+	 }
+	 
+	 public static void d() {
+		 if(y<38) {
+   		  y++;
+         	  playerPos = map[x][y];
+         	  map[x][y] = 0; 
+       	  map[x][y-1]=8;
+         }
+   	  else {
+   		  System.out.println("Can't go there");
+   		  waterCount++;
+   	  }
+	 }
+        
+
+	 
+/*	  public static void move(char dir){
 		  
 		  
 	      switch (dir){
@@ -141,7 +197,7 @@ public class Map {
 
 	      }
 	  }
-
+*/
 
 	  public static void map(){
 	      wall = 1;

@@ -3,7 +3,6 @@ package main;
 import java.awt.BorderLayout;
 import java.awt.CardLayout;
 import java.awt.Color;
-import java.awt.event.ActionEvent;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.Arrays;
@@ -13,13 +12,15 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
-import javax.swing.KeyStroke;
 
 import worldObjects.Dec;
 import worldObjects.Enemy;
 
 public class Display implements KeyListener{
 
+	
+	static JButton up;
+	
 	
 	static JPanel cards;
 	static JFrame frame;
@@ -67,15 +68,16 @@ public class Display implements KeyListener{
 		frame.setLayout(new BorderLayout());
 		
 //Map
-		JButton up =  new JButton("^");
+		up =  new JButton("^");
 		JButton down =  new JButton("v");
 		JButton left =  new JButton("<");
 		JButton right =  new JButton(">");
 
-		up.addKeyListener(this);
-		down.addKeyListener(this);
-		left.addKeyListener(this);
-		right.addKeyListener(this);	
+		//up.addKeyListener(this);
+		//down.addKeyListener(this);
+		//left.addKeyListener(this);
+		//right.addKeyListener(this);	
+		
 		
 		
 		panel = new JPanel();
@@ -157,7 +159,7 @@ public class Display implements KeyListener{
 	
 	@Override
 	public void keyTyped(KeyEvent e) {
-		
+		/*
 		char key = e.getKeyChar();
 		
 		if(key == 'w'|key == 'a'|key == 's'|key == 'd') {
@@ -166,7 +168,7 @@ public class Display implements KeyListener{
 			System.out.println("KeyEvent "+key);
 		}
 		
-		
+		*/
 	}
 
 

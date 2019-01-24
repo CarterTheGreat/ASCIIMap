@@ -6,6 +6,7 @@ import java.awt.image.BufferStrategy;
 import java.util.Arrays;
 
 import javax.swing.JLabel;
+import javax.swing.KeyStroke;
 
 import worldObjects.Dec;
 import worldObjects.Player;
@@ -38,6 +39,7 @@ public class Game implements Runnable{
 		System.out.println("init started");
 		display = new Display(title, width, height);
 		Dec dec = new Dec();
+		Display.up.getInputMap().put(KeyStroke.getKeyStroke('w'), "up");
 		turn();
 		
 	}
@@ -51,6 +53,7 @@ public class Game implements Runnable{
 	
 	private static void tick() {
 		
+		Display.up.getActionMap().put("up", Map.w());
 	}
 	
 	private static void render() {
